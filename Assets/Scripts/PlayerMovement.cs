@@ -7,14 +7,18 @@ public class PlayerMovement : MonoBehaviour
     public float horizontal;
     [HideInInspector]
     public float vertical;
+    [HideInInspector]
+    public float money;
     private Rigidbody2D rb;
     private Vector2 movement;
     private bool isFacingRight = true;
+    
     
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        money = 100;
     }
 
     void Update()
