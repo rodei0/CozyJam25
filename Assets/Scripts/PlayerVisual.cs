@@ -4,6 +4,8 @@ public class PlayerVisual : MonoBehaviour
 {
     private Animator anim;
     public SpriteRenderer carryRender;
+    public PlayerMovement movement;
+    public PlayerInventory inventory;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -12,7 +14,7 @@ public class PlayerVisual : MonoBehaviour
 
     void Update()
     {
-        
+        Moving();
     }
     public void SetCarrying(bool isCarrying)
     {
@@ -23,6 +25,17 @@ public class PlayerVisual : MonoBehaviour
         }
 
     }
+
+    public void Moving()
+    {
+        if ((movement.horizontal != 0 || movement.vertical != 0)) {
+        anim.SetBool("isMoving", true);
+        } else
+        {
+            anim.SetBool("isMoving", false);
+        }
+    }
+
 
     public void SetCarriedSprite(Sprite plantSprite)
     {

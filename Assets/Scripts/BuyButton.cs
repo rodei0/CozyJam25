@@ -8,6 +8,7 @@ public class BuyButton : MonoBehaviour
     private void Awake()
     {
         shopUI.SetActive(false);
+        
     }
 
     private void OnTriggerStay2D(Collider2D other)
